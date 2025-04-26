@@ -47,7 +47,9 @@ I'm a multi-disciplinary professional who bridges the gap between land surveying
 
 ### 📫 How to reach me
 
-- **Email**: tettehapotey@gmail.com  
+ 
+- **Address**:H/No. PR/AR/086 Abekope-Dawhenya.Dawhenya-Afienya Road Accra-Ghana (GH)
+- **Email**: itasofts@gmail.com  
 - **LinkedIn**: [Isaac Tetteh-Apotey](https://linkedin.com/in/your-profile)  
 - **GitHub**: [@itasofts](https://github.com/itasofts)  
 - **Upwork**: [Freelance Profile](https://www.upwork.com/freelancers/~your-profile-link)  
