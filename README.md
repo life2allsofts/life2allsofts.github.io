@@ -30,7 +30,7 @@ I'm a multi-disciplinary professional who bridges the gap between land surveying
 - **GIS Mapping & Data Acquisition** – University of Toronto  
 - **CompTIA A+ (PC Hardware, Troubleshooting)** – Alison  
 
-[View Full Credentials](https://github.com/itasofts/ITA-Computations/blob/main/credentials.html)
+[View Full Credentials](https://github.com/life2allsofts/ITA-Computations/blob/main/credentials.html)
 
 ### 🚀 Currently Working On
 
@@ -49,9 +49,9 @@ I'm a multi-disciplinary professional who bridges the gap between land surveying
 
  
 - **Address**:H/No. PR/AR/086 Abekope-Dawhenya.Dawhenya-Afienya Road Accra-Ghana (GH)
-- **Email**: itasofts@gmail.com  
+- **Email**: life2allsofts@gmail.com  
 - **LinkedIn**: [Isaac Tetteh-Apotey](https://linkedin.com/in/your-profile)  
-- **GitHub**: [@itasofts](https://github.com/itasofts)  
+- **GitHub**: [@life2allsofts](https://github.com/life2allsofts)  
 - **Upwork**: [Freelance Profile](https://www.upwork.com/freelancers/~your-profile-link)  
 
 ---
