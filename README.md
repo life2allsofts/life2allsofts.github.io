@@ -2,7 +2,7 @@
 
 ## 🌍 Geomatics Engineer | GIS Specialist | AI-Powered App Developer | UI/UX Enthusiast
 
-I'm a multi-disciplinary professional who bridges the gap between land surveying, GIS, and software development. With over 15 years of field experience and a passion for innovation, I build digital tools that solve real-world problems in geospatial engineering and planning.
+I'm a multi-disciplinary professional who bridges the gap between land surveying, GIS, and software development. With over 14 years of field experience and a passion for innovation, I build digital tools that solve real-world problems in geospatial engineering and planning.
 
 ### 🛠️ What I Do
 
