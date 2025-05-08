@@ -1,4 +1,4 @@
-# 👋 Hi, I’m Isaac Tetteh-Apotey (itasofts)
+# 👋 Hi, I’m Isaac Tetteh-Apotey (Life2AllSofts)
 
 ## 🌍 Geomatics Engineer | GIS Specialist | AI-Powered App Developer | UI/UX Enthusiast
 
