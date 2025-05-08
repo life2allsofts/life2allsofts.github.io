@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Terms of Service for ITA Computations, a geospatial app that offers bearing, distance computations, and coordinate management services.">
+    <meta name="keywords" content="Terms of Service, ITA Computations, geospatial app, surveying, coordinates, bearing, distance, survey control points">
+    <meta name="author" content="ITA Computations">
+    <meta name="robots" content="index, follow">
+    <title>Terms of Service</title>
+
+    <!-- External CSS Links (if any) -->
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* Mobile responsive design */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header, footer {
+            background-color: #7C2929; /* Dark Red */
+            color: white;
+            padding: 5px;
+            text-align: center;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 15px;
+            background-color: #f9f9f9;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1, h2 {
+            color: #7C2929;
+        }
+
+        .card {
+            background-color: #fff;
+            border: 1px solid #e0d3b8;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            color: #7C2929;
+        }
+
+        .footer-links {
+            text-align: center;
+            font-size: 0.9em;
+            color: #fff;
+        }
+
+        .footer-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        /* Media Queries for Mobile */
+        @media (max-width: 768px) {
+            .card {
+                padding: 15px;
+                margin-bottom: 10px;
+            }
+
+            main {
+                padding: 10px;
+                margin: 15px;
+            }
+        }
+
+        /* Add sticky footer at the bottom */
+        footer {
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+        }
+
+        /* Add smooth scroll to top button */
+        #backToTop {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #7C2929;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 15px;
+            cursor: pointer;
+            display: none;
+        }
+
+        #backToTop:hover {
+            background-color: #bf5f5f;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>End User License Agreement</h1>
+        <p>Last Updated: <span id="lastUpdated"></span></p>
+    </header>
+
+    <main>
+        <div class="card">
+            <h2>1. Acceptance of eula</h2>
+            <p>By accessing or using ITA Computations, you agree to comply with and be bound by these eula, including any additional guidelines and future modifications. If you do not agree with these terms, you should refrain from using the app.</p>
+        </div>
+
+        <div class="card">
+            <h2>2. App Description</h2>
+            <p>ITA Computations is a geospatial application designed for land surveyors. It offers tools for managing coordinates, computing bearing and distance between points, and accessing survey control points in Ghana. The app also provides an easy-to-use interface for GPS data processing.</p>
+        </div>
+
+        <div class="card">
+            <h2>3. Changes to Terms</h2>
+            <p>We may update these terms periodically. All updates will be posted on this page with a new "Last Updated" date. Your continued use of the app after such changes will indicate your acceptance of the modified terms.</p>
+        </div>
+
+        <div class="card">
+            <h2>4. User Responsibilities</h2>
+            <p>Users must use the app responsibly and not engage in any activities that could harm or disrupt the app’s functionality. You agree to provide accurate information when using the app, and not to use it for illegal activities.</p>
+        </div>
+
+        <div class="card">
+            <h2>5. Data Collection and Privacy</h2>
+            <p>ITA Computations may collect user data, including location information for geospatial processing. Your privacy is important, and data is processed in accordance with our <a href="privacy-policy.html" target="_blank">Privacy Policy</a>.</p>
+        </div>
+
+        <div class="card">
+            <h2>6. Intellectual Property</h2>
+            <p>All content, including text, images, and app components, is the property of ITA Computations and is protected by intellectual property laws. You may not reproduce, distribute, or use any part of the app without permission.</p>
+        </div>
+
+        <div class="card">
+            <h2>7. Limitation of Liability</h2>
+            <p>ITA Computations is not responsible for any damages arising from the use or inability to use the app. We do not guarantee the accuracy or completeness of any data or computations provided by the app.</p>
+        </div>
+
+        <div class="card">
+            <h2>8. Governing Law</h2>
+            <p>These terms shall be governed by the laws of Ghana. Any disputes shall be resolved in the courts of Ghana.</p>
+        </div>
+
+        <div class="card">
+            <h2>9. Contact Us</h2>
+            <p>If you have any questions or concerns regarding these Terms of Service, please contact us via email at <a href="mailto:itasofts@gmail.com.com">itasofts@gmail.com</a> or WhatsApp at <a href="https://wa.me/+233123456789">+233123456789</a>.</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="terms-of-service.html">Terms of Service</a> | 
+            <a href="privacy-policy.html">Privacy Policy</a> |
+            <a href="contact.html">Contact Us</a>
+        </div>
+    </footer>
+
+    <!-- Back-to-top button -->
+    <button id="backToTop" onclick="scrollToTop()">↑</button>
+
+    <script>
+        // Display last updated date dynamically
+        const lastUpdated = document.getElementById("lastUpdated");
+        const currentDate = new Date();
+        lastUpdated.textContent = currentDate.toLocaleDateString();
+
+        // Show back-to-top button on scroll
+        window.onscroll = function() {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                document.getElementById("backToTop").style.display = "block";
+            } else {
+                document.getElementById("backToTop").style.display = "none";
+            }
+        };
+
+        // Scroll to the top of the page
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
