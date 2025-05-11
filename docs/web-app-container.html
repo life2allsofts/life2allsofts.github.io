@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ITA Computations - Web App</title>
+  <style>
+    :root {
+      --dark-red: #7C2929;
+      --light-gold: #E0B881;
+      --white: #ffffff;
+      --ad-space: 15px; /* Uniform ad spacing */
+    }
+    
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #FFF9F0;
+      color: #333;
+    }
+    
+    /* Header with ad space above */
+    .app-header {
+      background-color: var(--dark-red);
+      color: var(--white);
+      padding: 10px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    /* Ad-ready container structure */
+    .app-container {
+      display: grid;
+      grid-template-areas:
+        "header header"
+        "left-ad main"
+        "footer footer";
+      grid-template-columns: auto 1fr;
+      gap: var(--ad-space);
+      padding: var(--ad-space);
+    }
+    
+    /* Reserved ad spaces (invisible until approved) */
+    .ad-space {
+      background: transparent;
+      min-width: 120px; /* Minimum ad width */
+    }
+    
+    .top-ad-space {
+      grid-area: header;
+      height: 90px; /* Leaderboard ad height */
+    }
+    
+    .left-ad-space {
+      grid-area: left-ad;
+      position: sticky;
+      top: 120px; /* Below header */
+      align-self: start;
+    }
+    
+    .main-content {
+      grid-area: main;
+    }
+    
+    .bottom-ad-space {
+      grid-area: footer;
+      height: 90px;
+    }
+    
+    /* App iframe with proper spacing */
+    #app-iframe {
+      width: 100%;
+      height: calc(100vh - 240px); /* Accounts for ad spaces */
+      border: none;
+      border-radius: 6px;
+      background: var(--white);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    @media (max-width: 768px) {
+      .app-container {
+        grid-template-areas:
+          "header"
+          "main"
+          "footer";
+        grid-template-columns: 1fr;
+      }
+      .left-ad-space { display: none; }
+      #app-iframe { height: calc(100vh - 180px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Top Ad Space (for crawlers) -->
+    <div class="ad-space top-ad-space" aria-hidden="true"></div>
+    
+    <!-- Left Sidebar Ad Space -->
+    <div class="ad-space left-ad-space" aria-hidden="true"></div>
+    
+    <!-- Main App Content -->
+    <div class="main-content">
+      <iframe id="app-iframe" 
+              src="https://life2allsofts.github.io/ita-computations/"
+              allow="fullscreen"
+              title="ITA Computations Web Application">
+      </iframe>
+    </div>
+    
+    <!-- Bottom Ad Space -->
+    <div class="ad-space bottom-ad-space" aria-hidden="true"></div>
+  </div>
+
+  <script>
+    // Ad space detection for crawlers
+    document.addEventListener('DOMContentLoaded', function() {
+      const adSpaces = document.querySelectorAll('.ad-space');
+      adSpaces.forEach(space => {
+        space.setAttribute('data-ad-format', 'auto');
+        space.setAttribute('data-ad-ready', 'true');
+      });
+      
+      // Dynamic iframe height adjustment
+      function resizeIframe() {
+        const headerHeight = document.querySelector('.top-ad-space').offsetHeight;
+        const footerHeight = document.querySelector('.bottom-ad-space').offsetHeight;
+        const iframe = document.getElementById('app-iframe');
+        iframe.style.height = `calc(100vh - ${headerHeight + footerHeight + 30}px)`;
+      }
+      
+      window.addEventListener('load', resizeIframe);
+      window.addEventListener('resize', resizeIframe);
+    });
+  </script>
+</body>
+</html>
