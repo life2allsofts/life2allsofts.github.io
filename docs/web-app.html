@@ -9,7 +9,7 @@
       --dark-red: #7C2929;
       --light-gold: #E0B881;
       --white: #ffffff;
-      --ad-space: 15px; /* Uniform ad spacing */
+      --ad-space: 10px; /* Reduced from 15px */
     }
     
     body {
@@ -20,17 +20,17 @@
       color: #333;
     }
     
-    /* Header with ad space above */
+    /* Header with ad space above - made more compact */
     .app-header {
       background-color: var(--dark-red);
       color: var(--white);
-      padding: 10px;
+      padding: 5px 10px; /* Reduced padding */
       position: sticky;
       top: 0;
       z-index: 100;
     }
     
-    /* Ad-ready container structure */
+    /* More compact container structure */
     .app-container {
       display: grid;
       grid-template-areas:
@@ -42,50 +42,52 @@
       padding: var(--ad-space);
     }
     
-    /* Reserved ad spaces (invisible until approved) */
+    /* Smaller ad spaces */
     .ad-space {
       background: transparent;
-      min-width: 120px; /* Minimum ad width */
+      min-width: 100px; /* Reduced from 120px */
     }
     
     .top-ad-space {
       grid-area: header;
-      height: 90px; /* Leaderboard ad height */
+      height: 70px; /* Reduced from 90px */
     }
     
     .left-ad-space {
       grid-area: left-ad;
       position: sticky;
-      top: 120px; /* Below header */
+      top: 90px; /* Adjusted for new header height */
       align-self: start;
     }
     
     .main-content {
       grid-area: main;
+      margin-top: 5px; /* Reduced top margin */
     }
     
     .bottom-ad-space {
       grid-area: footer;
-      height: 90px;
+      height: 70px; /* Reduced from 90px */
     }
     
-    /* App iframe with proper spacing */
+    /* More compact iframe styling */
     #app-iframe {
       width: 100%;
-      height: calc(100vh - 300px); /* Accounts for ad spaces */
+      height: calc(100vh - 200px); /* Reduced from 240px */
       border: none;
       border-radius: 6px;
       background: var(--white);
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      margin-top: 5px; /* Added small top margin */
     }
     
-    /* New iframe description card */
+    /* Compact description card */
     .iframe-description {
       background: var(--white);
       border: 2px solid var(--light-gold);
       border-radius: 8px;
-      padding: 20px;
-      margin-bottom: 20px;
+      padding: 15px; /* Reduced from 20px */
+      margin: 5px 0 10px 0; /* Tightened margins */
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       position: relative;
       overflow: hidden;
@@ -97,15 +99,21 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 5px;
+      height: 4px; /* Reduced from 5px */
       background: var(--light-gold);
     }
     
     .iframe-description h2 {
       color: var(--dark-red);
-      margin-top: 0;
+      margin: 5px 0 8px 0; /* Tightened margins */
+      font-size: 1.2em; /* Slightly smaller */
       border-bottom: 1px solid var(--light-gold);
-      padding-bottom: 10px;
+      padding-bottom: 8px; /* Reduced from 10px */
+    }
+    
+    .iframe-description p {
+      margin: 8px 0; /* Reduced paragraph spacing */
+      line-height: 1.4;
     }
     
     @media (max-width: 768px) {
@@ -117,23 +125,26 @@
         grid-template-columns: 1fr;
       }
       .left-ad-space { display: none; }
-      #app-iframe { height: calc(100vh - 180px); }
+      #app-iframe { 
+        height: calc(100vh - 160px); /* Adjusted for compact layout */
+        margin-top: 5px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="app-container">
-    <!-- Top Ad Space (for crawlers) -->
+    <!-- Compact Top Ad Space -->
     <div class="ad-space top-ad-space" aria-hidden="true"></div>
     
     <!-- Left Sidebar Ad Space -->
     <div class="ad-space left-ad-space" aria-hidden="true"></div>
     
-    <!-- Main App Content -->
+    <!-- Main Content Area - Now More Compact -->
     <div class="main-content">
       <div class="iframe-description">
         <h2>Welcome</h2>
-        <p>ITA Computations is an offline-ready geospatial app designed for Ghanaian surveyors. It provides essential tools for field calculations, plan preparation, and survey data processing.</p>
+        <p>ITA Computations: Essential geospatial tools for Ghanaian surveyors. Offline-ready for field calculations and plan preparation.</p>
       </div>
       
       <iframe id="app-iframe" 
@@ -143,12 +154,12 @@
       </iframe>
     </div>
     
-    <!-- Bottom Ad Space -->
+    <!-- Compact Bottom Ad Space -->
     <div class="ad-space bottom-ad-space" aria-hidden="true"></div>
   </div>
 
   <script>
-    // Ad space detection for crawlers
+    // Adjusted for compact layout
     document.addEventListener('DOMContentLoaded', function() {
       const adSpaces = document.querySelectorAll('.ad-space');
       adSpaces.forEach(space => {
@@ -156,12 +167,12 @@
         space.setAttribute('data-ad-ready', 'true');
       });
       
-      // Dynamic iframe height adjustment
       function resizeIframe() {
         const headerHeight = document.querySelector('.top-ad-space').offsetHeight;
         const footerHeight = document.querySelector('.bottom-ad-space').offsetHeight;
+        const descriptionHeight = document.querySelector('.iframe-description').offsetHeight;
         const iframe = document.getElementById('app-iframe');
-        iframe.style.height = `calc(100vh - ${headerHeight + footerHeight + 30}px)`;
+        iframe.style.height = `calc(100vh - ${headerHeight + footerHeight + descriptionHeight + 25}px)`;
       }
       
       window.addEventListener('load', resizeIframe);
