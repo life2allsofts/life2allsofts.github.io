@@ -79,6 +79,35 @@
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
     
+    /* New iframe description card */
+    .iframe-description {
+      background: var(--white);
+      border: 2px solid var(--light-gold);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .iframe-description::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: var(--light-gold);
+    }
+    
+    .iframe-description h2 {
+      color: var(--dark-red);
+      margin-top: 0;
+      border-bottom: 1px solid var(--light-gold);
+      padding-bottom: 10px;
+    }
+    
     @media (max-width: 768px) {
       .app-container {
         grid-template-areas:
@@ -102,6 +131,11 @@
     
     <!-- Main App Content -->
     <div class="main-content">
+      <div class="iframe-description">
+        <h2>Welcome</h2>
+        <p>ITA Computations is an offline-ready geospatial app designed for Ghanaian survey professionals and students. It provides essential tools for field and office survey data processing.</p>
+      </div>
+      
       <iframe id="app-iframe" 
               src="https://life2allsofts.github.io/ita-computations/"
               allow="fullscreen"
@@ -122,17 +156,4 @@
         space.setAttribute('data-ad-ready', 'true');
       });
       
-      // Dynamic iframe height adjustment
-      function resizeIframe() {
-        const headerHeight = document.querySelector('.top-ad-space').offsetHeight;
-        const footerHeight = document.querySelector('.bottom-ad-space').offsetHeight;
-        const iframe = document.getElementById('app-iframe');
-        iframe.style.height = `calc(100vh - ${headerHeight + footerHeight + 30}px)`;
-      }
-      
-      window.addEventListener('load', resizeIframe);
-      window.addEventListener('resize', resizeIframe);
-    });
-  </script>
-</body>
-</html>
+      // Dynamic iframe height
