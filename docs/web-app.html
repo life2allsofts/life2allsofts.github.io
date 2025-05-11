@@ -133,7 +133,7 @@
     <div class="main-content">
       <div class="iframe-description">
         <h2>Welcome</h2>
-        <p>ITA Computations is an offline-ready geospatial app designed for Ghanaian survey professionals and students. It provides essential tools for field and office survey data processing.</p>
+        <p>ITA Computations is an offline-ready geospatial app designed for Ghanaian surveyors. It provides essential tools for field calculations, plan preparation, and survey data processing.</p>
       </div>
       
       <iframe id="app-iframe" 
@@ -156,4 +156,17 @@
         space.setAttribute('data-ad-ready', 'true');
       });
       
-      // Dynamic iframe height
+      // Dynamic iframe height adjustment
+      function resizeIframe() {
+        const headerHeight = document.querySelector('.top-ad-space').offsetHeight;
+        const footerHeight = document.querySelector('.bottom-ad-space').offsetHeight;
+        const iframe = document.getElementById('app-iframe');
+        iframe.style.height = `calc(100vh - ${headerHeight + footerHeight + 30}px)`;
+      }
+      
+      window.addEventListener('load', resizeIframe);
+      window.addEventListener('resize', resizeIframe);
+    });
+  </script>
+</body>
+</html>
