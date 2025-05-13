@@ -2,25 +2,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Pre-Launch Control System -->
+  <!-- Pre-Launch Control Tag (CREDENTIALS-SPECIFIC) -->
 <script>
-// Configure these variables
-const LAUNCH_DATE = new Date('2025-06-01'); // Change to your launch date
-const BLOG_PREVIEW = true; // Allow /blog access before launch
+const LAUNCH_DATE = new Date('2025-06-01');
+const isCrawler = /Googlebot|AdsBot-Google/i.test(navigator.userAgent);
 
-// Detect if visitor is AdSense/Google crawler
-const isCrawler = /Googlebot|AdsBot-Google|Mediapartners-Google/i.test(navigator.userAgent);
-
-// Show pre-launch modal if: before launch AND not a crawler AND (not blog page OR blog preview disabled)
-if(new Date() < LAUNCH_DATE && !isCrawler && (!window.location.pathname.includes('/blog') || !BLOG_PREVIEW)) {
+if(new Date() < LAUNCH_DATE && !isCrawler) {
   document.write(`
-    <div style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.97);z-index:9999;color:#E0B881;padding:20vh 10vw;text-align:center;font-family:Arial,sans-serif;">
-      <h2 style="color:#E0B881;font-size:2rem;">Geospatial Resource Hub</h2>
-      <p style="font-size:1.2rem;margin:2rem 0;">Launching ${LAUNCH_DATE.toLocaleDateString()}</p>
-      ${BLOG_PREVIEW ? '<a href="/blog" style="color:#7C2929;background:#E0B881;padding:10px 20px;border-radius:5px;text-decoration:none;font-weight:bold;">Preview Blog</a>' : ''}
-      <!-- Crawler-visible placeholder -->
-      <div style="width:300px;height:250px;margin:30px auto;background:#333;display:flex;justify-content:center;align-items:center;visibility:hidden;">
-        <p style="color:white;">Ad Space</p>
+    <div style="position:fixed;...">
+      <h2>Professional Credentials Preview</h2>
+      <p>Full certification details available at launch</p>
+      <!-- Special crawler-visible element -->
+      <div style="width:1px;height:1px;overflow:hidden;">
+        <p>Isaac Tetteh-Apotey: ${document.querySelector('h1').innerText}</p>
       </div>
     </div>
   `);
