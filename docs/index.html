@@ -414,6 +414,17 @@ footer a[href="#top"]:hover {
   text-decoration: underline;
 }
 
+/* Add this NEW rule to your existing CSS */
+@media (max-width: 768px) {
+  .collapsible-menu {
+    display: none !important; /* Force hide on mobile until toggled */
+  }
+  
+  .collapsible-menu.active { /* Added active class for JavaScript toggle */
+    display: block !important;
+  }
+}
+
 /* Back-to-Top Button */
 #back-to-top {
   position: fixed;
@@ -1079,38 +1090,40 @@ footer a[href="#top"]:hover {
         day: 'numeric' 
       });
     
-    // Toggle collapsible menu
-document.querySelector('.menu-toggle').addEventListener('click', function() {
-  const menu = document.querySelector('.collapsible-menu');
-  menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-});
-
-// Back-to-top button
-window.addEventListener('scroll', function() {
-  const backToTopBtn = document.getElementById('back-to-top');
-  if (window.scrollY > 300) {
-    backToTopBtn.style.display = 'block';
-  } else {
-    backToTopBtn.style.display = 'none';
-  }
-});
-
-document.getElementById('back-to-top').addEventListener('click', function() {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
-});
-
-// Close menu when clicking a link
-document.querySelectorAll('.collapsible-menu a').forEach(link => {
-  link.addEventListener('click', () => {
-    document.querySelector('.collapsible-menu').style.display = 'none';
-  });
-});
-    
+   <script>
+    // ===== MOBILE MENU TOGGLE =====
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const collapsibleMenu = document.querySelector('.collapsible-menu');
+      
+      if (menuToggle && collapsibleMenu) {
+        // Toggle menu on button click
+        menuToggle.addEventListener('click', function(e) {
+          e.stopPropagation(); // Prevent event bubbling
+          const isExpanded = this.getAttribute('aria-expanded') === 'true';
+          this.setAttribute('aria-expanded', !isExpanded);
+          collapsibleMenu.classList.toggle('active');
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+          if (!collapsibleMenu.contains(e.target) && e.target !== menuToggle) {
+            collapsibleMenu.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+          }
+        });
+        
+        // Close menu when clicking a link
+        collapsibleMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            collapsibleMenu.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+    });
   </script>
-  <script>
+
   // Show the Cookie Modal on page load
   window.onload = function() {
     if (!localStorage.getItem("cookieConsent")) {
