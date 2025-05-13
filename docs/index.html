@@ -2,6 +2,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Smart Pre-Launch System -->
+<script>
+// Configuration
+const LAUNCH_DATE = new Date('2025-06-01');
+const HOMEPAGE_URL = window.location.origin; // Automatically gets your domain
+
+// Special session flag to bypass after preview
+if(sessionStorage.getItem('bypassLaunchScreen')) {
+  document.documentElement.style.visibility = 'visible';
+} else {
+  // Detect crawlers and show launch screen
+  const isCrawler = /Googlebot|AdsBot-Google/i.test(navigator.userAgent);
+  
+  if(new Date() < LAUNCH_DATE && !isCrawler) {
+    // Hide main content
+    document.documentElement.style.visibility = 'hidden';
+    
+    // Create launch screen
+    const launchScreen = document.createElement('div');
+    launchScreen.innerHTML = `
+      <div style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.97);z-index:9999;color:#E0B881;padding:20vh 10vw;text-align:center;font-family:Arial,sans-serif;">
+        <h2 style="color:#E0B881;">Geospatial Resource Hub</h2>
+        <p style="margin:2rem 0;">Launching ${LAUNCH_DATE.toLocaleDateString()}</p>
+        <button id="previewBtn" style="color:#7C2929;background:#E0B881;padding:10px 20px;border:none;border-radius:5px;font-weight:bold;cursor:pointer;">
+          Preview Homepage
+        </button>
+      </div>
+    `;
+    document.body.appendChild(launchScreen);
+
+    // Preview button logic
+    document.getElementById('previewBtn').addEventListener('click', () => {
+      sessionStorage.setItem('bypassLaunchScreen', 'true');
+      window.location.href = HOMEPAGE_URL; // Full reload without launch screen
+    });
+  }
+}
+</script>
+
+<!-- Hidden verification for crawlers -->
+<div style="width:1px;height:1px;overflow:hidden;">
+  AdSense Verification Element
+</div>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="ita computations - A geospatial app for real-time calculations. Available on Microsoft Store, Google Play, and App Store.">
