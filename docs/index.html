@@ -2,38 +2,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Pre-Launch Control Tag (CREDENTIALS-SPECIFIC) -->
+  <!-- Homepage Pre-Launch Control - CORRECTED -->
 <script>
-const LAUNCH_DATE = new Date('2025-06-01');
-const isCrawler = /Googlebot|AdsBot-Google/i.test(navigator.userAgent);
+// Configuration
+const LAUNCH_DATE = new Date('2025-06-01'); // Set your launch date
+const HOMEPAGE_URL = 'https://life2allsofts.github.io/'; // Your actual homepage
 
-if(new Date() < LAUNCH_DATE && !isCrawler) {
+// Detect crawlers
+const isCrawler = /Googlebot|AdsBot-Google|Mediapartners-Google/i.test(navigator.userAgent);
+
+// Only show on homepage before launch
+if(window.location.pathname === '/' && new Date() < LAUNCH_DATE && !isCrawler) {
   document.write(`
-    <div style="position:fixed;...">
-      <h2>Professional Credentials Preview</h2>
-      <p>Full certification details available at launch</p>
-      <!-- Special crawler-visible element -->
-      <div style="width:1px;height:1px;overflow:hidden;">
-        <p>Isaac Tetteh-Apotey: ${document.querySelector('h1').innerText}</p>
+    <div style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.97);z-index:9999;color:#E0B881;padding:20vh 10vw;text-align:center;font-family:Arial,sans-serif;">
+      <h2 style="color:#E0B881;font-size:2rem;">Geospatial Resource Hub</h2>
+      <p style="font-size:1.2rem;margin:2rem 0;">Launching ${LAUNCH_DATE.toLocaleDateString()}</p>
+      
+      <!-- PREVIEW BUTTON - NOW OPENS HOMEPAGE IN NEW TAB -->
+      <a href="${HOMEPAGE_URL}" target="_blank" 
+         style="color:#7C2929;background:#E0B881;padding:10px 20px;border-radius:5px;text-decoration:none;font-weight:bold;">
+         Preview Homepage
+      </a>
+
+      <!-- Hidden verification placeholder -->
+      <div aria-hidden="true" style="width:1px;height:1px;overflow:hidden;">
+        AdSense Verification Element
       </div>
     </div>
   `);
 }
 </script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="ita computations - A geospatial app for real-time calculations. Available on Microsoft Store, Google Play, and App Store.">
-  <meta name="keywords" content="geospatial app, ita computations, cross-platform, real-time calculations">
-  <title>ita computations - Geospatial App</title>
-   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WKE4N46LBX"></script>
-  <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-WKE4N46LBX');
-  </script>
   
   <meta name="google-site-verification" content="M1MjZH-Yr_4w9OTDsWw_AwaiA3rE_4ukXb-LKNUxHNk" />
     <!-- AdSense Verification Tag (REQUIRED for approval) -->
