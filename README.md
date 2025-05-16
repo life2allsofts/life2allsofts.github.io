@@ -8,7 +8,7 @@ I'm a multi-disciplinary professional who bridges the gap between land surveying
 
 - **Field-Proven Surveying & Mapping**
   - 1,000+ plots demarcated and over 10 planning schemes developed across Ghana
-  - Digitized 600+ layouts visualized via [Google MyMaps]("https://www.google.com/maps/d/u/3/embed?mid=1X13rhmqJlEzPEWP59OqXiwxZrSNDa7V7&ehbc=2E312F")
+  - Digitized 600+ layouts visualized via [Google MyMaps](https://www.google.com/maps/d/u/3/embed?mid=1X13rhmqJlEzPEWP59OqXiwxZrSNDa7V7&ehbc=2E312F)
 
 
 - **App Development**
